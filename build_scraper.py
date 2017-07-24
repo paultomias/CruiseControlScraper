@@ -25,11 +25,14 @@ def get_tickets(build_num, base_url, branch):
 	#remove duplicates
 	tickets = list(set(tickets))
 
-	print(tickets)
+	#return the list of affected tickets
+	return tickets
 
 #parameters which makes the function flexible
-build_num = "1889"
+build_num = "1895"
 base_url = "http://chiron2.infor.com:7058"
 branch = "/buildresults/lsf-REL_10-MASTER"
 
-get_tickets(build_num, base_url, branch)
+tickets = get_tickets(build_num, base_url, branch)
+
+print(tickets)
